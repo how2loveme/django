@@ -1,0 +1,49 @@
+<h2><a href="/checkdeploy"><< 뒤로가기(다시하기)</a></h2>
+
+<h2>노션에 없는 커밋(release에만 존재) -> 노션미작성 or 배포일자확인</h2>
+{% if nonTargets|length > 0 %}
+<ol>
+    {% for item in nonTargets %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ol>
+{% else %}
+<span>없음(good👍)</span>
+{% endif %}
+<hr/>
+<h2>노션에만 있는 티켓 -> release에 merge 여부 확인</h2>
+{% if nonExists|length > 0 %}
+<ol>
+    {% for item in nonExists %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ol>
+{% else %}
+<span>없음(good👍)</span>
+{% endif %}
+<hr/>
+<h2>정상 티켓 -> 둘 다 있음. 아래 커밋 내역 검토</h2>
+{% if exists|length > 0 %}
+<ol>
+    {% for item in exists %}
+    <li>
+        {{ item }}
+    </li>
+    {% endfor %}
+</ol>
+{% else %}
+<span>없음</span>
+{% endif %}
+<hr/>
+<h2>정상 커밋 내역</h2>
+{% if targets|length > 0 %}
+<ol>
+    {% for item in targets %}
+    <li>
+        {{ item }}
+    </li>
+    {% endfor %}
+</ol>
+{% else %}
+<span>없음</span>
+{% endif %}

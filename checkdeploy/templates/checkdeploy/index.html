@@ -1,0 +1,18 @@
+{% load static %}
+<form action="/checkdeploy/run" method="get">
+    <textarea name="ticketArr" style="min-height: 500px" placeholder="MOZOP002-39560
+MOZOP002-39557
+MOZOP002-39628
+MOZOP002-39620
+MOZOP002-39443
+MOZOP002-40043
+MOZOP002-39803"></textarea>
+    <img src="{% static 'checkdeploy/images/sample.jpg' %}"/>
+<!--    <img src="/checkdeploy/images/sample.jpg"/>-->
+    <ol>
+        <li>노션의 개발티켓을 드래그 & 복사</li>
+        <li>textarea에 붙여넣기</li>
+        <li>"run" 버튼 클릭</li>
+    </ol>
+    <button value="find" type="submit">run</button>
+</form>
