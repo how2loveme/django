@@ -7,30 +7,30 @@ def index(request):
     return HttpResponse(template.render({}, request))
 
 def run(request):
-    exists, nonExists, targets, nonTargets = checkdeploy(request.GET['ticketArr'])
+    exists, non_exists, targets, non_targets = checkdeploy(request.GET['ticket_arr'])
     template = loader.get_template("checkdeploy/result.html")
     return HttpResponse(
         template.render(
             {
                 "exists": exists,
-                "nonExists": nonExists,
+                "non_exists": non_exists,
                 "targets": targets,
-                "nonTargets": nonTargets,
+                "non_targets": non_targets,
             },
             request
         )
     )
     # template = loader.get_template("checkdeploy/result.html")
     # return render(request, "checkdeploy/result.html", {})
-    # return render(request, "checkdeploy/result.html", {exists, nonExists, targets, nonTargets})
+    # return render(request, "checkdeploy/result.html", {exists, non_exists, targets, non_targets})
     # return render(
     #     request,
     #     "checkdeploy/result.html",
     #     {
     #         exists: exists,
-    #         nonExists: nonExists,
+    #         non_exists: non_exists,
     #         targets: targets,
-    #         nonTargets: nonTargets
+    #         non_targets: non_targets
     #     }
     # )
 

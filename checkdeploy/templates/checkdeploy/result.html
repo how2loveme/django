@@ -1,9 +1,9 @@
 <h2><a href="/checkdeploy"><< 뒤로가기(다시하기)</a></h2>
 
 <h2>노션에 없는 커밋(release에만 존재) -> 노션미작성 or 배포일자확인</h2>
-{% if nonTargets|length > 0 %}
+{% if non_targets|length > 0 %}
 <ol>
-    {% for item in nonTargets %}
+    {% for item in non_targets %}
     <li>{{ item }}</li>
     {% endfor %}
 </ol>
@@ -12,9 +12,9 @@
 {% endif %}
 <hr/>
 <h2>노션에만 있는 티켓 -> release에 merge 여부 확인</h2>
-{% if nonExists|length > 0 %}
+{% if non_exists|length > 0 %}
 <ol>
-    {% for item in nonExists %}
+    {% for item in non_exists %}
     <li>{{ item }}</li>
     {% endfor %}
 </ol>
